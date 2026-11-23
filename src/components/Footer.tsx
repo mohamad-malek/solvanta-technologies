@@ -2,14 +2,7 @@ import { GitBranch } from "lucide-react";
 import { NAV_LINKS, COMPANY } from "@/lib/data";
 import { Logo } from "./ui/Logo";
 
-async function getYear() {
-  "use cache";
-  // Computed once at build/prerender time; the site is fully static.
-  return new Date().getFullYear();
-}
-
-export async function Footer() {
-  const year = await getYear();
+export function Footer() {
   return (
     <footer data-surface="dark" className="border-t border-white/10 bg-navy-900 text-slate-300">
       <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8">
@@ -41,10 +34,7 @@ export async function Footer() {
         </div>
 
         <div className="mt-12 border-t border-white/10 pt-6">
-          <div className="flex flex-col gap-3 text-sm text-slate-400 sm:flex-row sm:items-center sm:justify-between">
-            <p>
-              &copy; {year} {COMPANY.name}. All rights reserved.
-            </p>
+          <div className="flex justify-center text-sm text-slate-400">
             <a
               href={COMPANY.github}
               target="_blank"
