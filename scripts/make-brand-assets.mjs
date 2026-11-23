@@ -68,7 +68,7 @@ console.log("icons written");
     <text x="80" y="330" font-size="64" font-weight="800" fill="#FFFFFF">We Build Digital Solutions That</text>
     <text x="80" y="410" font-size="64" font-weight="800" fill="#38A5FF">Move Businesses Forward.</text>
     <text x="80" y="500" font-size="28" font-style="italic" fill="#CBD5E1">Turning Challenges into Solutions.</text>
-    <text x="80" y="578" font-size="20" fill="#7C8BA6">Software Development &amp; Technology Solutions  ·  Academic project demonstration</text>
+    <text x="80" y="578" font-size="20" fill="#7C8BA6">Software Development &amp; Technology Solutions</text>
   </g>
 </svg>`);
   await sharp(svg).composite([{ input: m, left: 80, top: 62 }]).png({ compressionLevel: 9 }).toFile("src/app/opengraph-image.png");

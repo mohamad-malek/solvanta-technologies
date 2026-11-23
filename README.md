@@ -1,10 +1,8 @@
 # Solvanta Technologies — Company Website
 
-A static, single-page marketing website for the fictional software company **Solvanta Technologies**
-(*Turning Challenges into Solutions.*), built for a Master 2 Information System Engineering project.
-
-> Academic project demonstration. The portfolio items are concept projects, and `contact@solvanta.example`
-> is an illustrative placeholder, not a monitored address.
+A static, single-page marketing website for **Solvanta Technologies**, a software development and technology solutions company
+(*Turning Challenges into Solutions.*). MediBook, SmartBiz ERP and OpsGuard on the site are concept projects,
+not client engagements.
 
 ## Stack
 

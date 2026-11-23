@@ -1,3 +1,4 @@
+import { GitBranch } from "lucide-react";
 import { NAV_LINKS, COMPANY } from "@/lib/data";
 import { Logo } from "./ui/Logo";
 
@@ -43,10 +44,16 @@ export async function Footer() {
           <p>
             &copy; {year} {COMPANY.name}. All rights reserved.
           </p>
-          <p className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-300">
-            <span className="h-1.5 w-1.5 rounded-full bg-sky" aria-hidden="true" />
-            Academic project demonstration
-          </p>
+          <a
+            href={COMPANY.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 transition hover:text-white"
+          >
+            <GitBranch className="h-4 w-4" aria-hidden="true" />
+            GitHub
+            <span className="sr-only"> (opens in a new tab)</span>
+          </a>
         </div>
       </div>
     </footer>

@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     template: "%s | Solvanta Technologies",
   },
   description:
-    "Solvanta Technologies is a software development company building modern web applications, business management systems, and scalable digital solutions. Academic project demonstration.",
+    "Solvanta Technologies is a software development company building modern web applications, business management systems, and scalable digital solutions.",
   keywords: [
     "Solvanta Technologies",
     "software development",

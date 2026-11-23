@@ -1,10 +1,10 @@
-import { Building2, Mail, MapPin, ArrowUpRight, Info } from "lucide-react";
+import { Building2, GitBranch, MapPin, ArrowUpRight } from "lucide-react";
 import { COMPANY } from "@/lib/data";
 import { Reveal } from "./ui/Reveal";
 
 const DETAILS = [
   { icon: Building2, label: "Company", value: COMPANY.name, href: undefined },
-  { icon: Mail, label: "Email", value: COMPANY.email, href: `mailto:${COMPANY.email}` },
+  { icon: GitBranch, label: "GitHub", value: "github.com/mohamad-malek", href: COMPANY.github },
   { icon: MapPin, label: "Location", value: COMPANY.location, href: undefined },
 ] as const;
 
@@ -42,11 +42,14 @@ export function Contact() {
 
               <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
                 <a
-                  href={`mailto:${COMPANY.email}?subject=Project%20enquiry`}
+                  href={COMPANY.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="btn-primary group inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-base font-semibold text-white"
                 >
-                  <Mail className="h-4 w-4" aria-hidden="true" />
-                  Send Us an Email
+                  <GitBranch className="h-4 w-4" aria-hidden="true" />
+                  View Our GitHub
+                  <span className="sr-only"> (opens in a new tab)</span>
                   <ArrowUpRight
                     className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
                     aria-hidden="true"
@@ -59,12 +62,6 @@ export function Contact() {
                   Review Our Work
                 </a>
               </div>
-
-              <p className="mt-6 flex max-w-lg items-start gap-2 text-sm leading-relaxed text-slate-400">
-                <Info className="mt-0.5 h-4 w-4 shrink-0 text-sky" aria-hidden="true" />
-                Demo notice: this email address is an illustrative placeholder for an academic
-                project and is not a monitored inbox.
-              </p>
             </Reveal>
 
             <Reveal delay={150}>
@@ -82,9 +79,12 @@ export function Contact() {
                       {href ? (
                         <a
                           href={href}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className="mt-0.5 block break-words text-lg font-semibold text-white underline-offset-4 hover:text-sky hover:underline"
                         >
                           {value}
+                          <span className="sr-only"> (opens in a new tab)</span>
                         </a>
                       ) : (
                         <p className="mt-0.5 text-lg font-semibold text-white">{value}</p>

@@ -24,7 +24,7 @@ import {
 export const COMPANY = {
   name: "Solvanta Technologies",
   tagline: "Turning Challenges into Solutions.",
-  email: "contact@solvanta.example",
+  github: "https://github.com/mohamad-malek",
   location: "Lebanon",
 };
 
@@ -105,7 +105,6 @@ export const PROJECTS = [
     id: "medibook",
     name: "MediBook",
     category: "Appointment Booking Platform",
-    timeline: "March–June 2024",
     description:
       "A clinic appointment management concept with patient bookings, doctor availability, scheduling conflict prevention, and an administration dashboard.",
     focus: "Web applications, scheduling, database integration.",
@@ -115,7 +114,6 @@ export const PROJECTS = [
     id: "smartbiz",
     name: "SmartBiz ERP",
     category: "Business Management Platform",
-    timeline: "April–August 2025",
     description:
       "A lightweight ERP concept for small businesses, supporting customer management, inventory, sales, invoices, and reporting.",
     focus: "Business applications, APIs, database systems.",
@@ -125,7 +123,6 @@ export const PROJECTS = [
     id: "opsguard",
     name: "OpsGuard",
     category: "IT Monitoring Platform",
-    timeline: "January–June 2026",
     description:
       "An infrastructure monitoring concept featuring service monitoring, alerts, incident tracking, logs, and administration tools.",
     focus: "Monitoring, API integrations, security, system reliability.",

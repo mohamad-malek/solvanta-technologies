@@ -1,4 +1,4 @@
-import { CalendarRange, Cpu, FlaskConical, Info } from "lucide-react";
+import { Cpu, FlaskConical, Info } from "lucide-react";
 import { PROJECTS } from "@/lib/data";
 import { Reveal } from "./ui/Reveal";
 import { SectionHeading } from "./ui/SectionHeading";
@@ -29,15 +29,15 @@ export function Projects() {
           tone="dark"
           eyebrow="Our Work · Concept Projects"
           title="Product concepts that show how we think and build."
-          description="Three academic demonstrations that illustrate our approach to design, architecture, and delivery."
+          description="Three solution concepts that illustrate how we approach product design, architecture, and delivery."
         />
 
         <Reveal delay={100} className="mx-auto mt-8 flex max-w-2xl justify-center">
           <p className="inline-flex items-start gap-2.5 rounded-xl border border-sky/25 bg-sky/10 px-4 py-3 text-left text-sm leading-relaxed text-slate-200">
             <Info className="mt-0.5 h-4 w-4 shrink-0 text-sky" aria-hidden="true" />
             <span>
-              These are <strong className="font-semibold text-white">simulated academic portfolio projects</strong>,
-              not commercial client engagements. They have no live demos, testimonials, or performance claims.
+              These are <strong className="font-semibold text-white">concept projects</strong> created to
+              demonstrate our approach. They are not client engagements, and no live demos or results are claimed.
             </span>
           </p>
         </Reveal>
@@ -66,13 +66,6 @@ export function Projects() {
                     <p className="mt-3 text-[0.95rem] leading-relaxed text-slate-300">{p.description}</p>
 
                     <dl className="mt-6 space-y-3 border-t border-white/10 pt-5 text-sm">
-                      <div className="flex items-start gap-2.5">
-                        <CalendarRange className="mt-0.5 h-4 w-4 shrink-0 text-sky" aria-hidden="true" />
-                        <div>
-                          <dt className="sr-only">Timeline</dt>
-                          <dd className="text-slate-200">{p.timeline}</dd>
-                        </div>
-                      </div>
                       <div className="flex items-start gap-2.5">
                         <Cpu className="mt-0.5 h-4 w-4 shrink-0 text-sky" aria-hidden="true" />
                         <div>
