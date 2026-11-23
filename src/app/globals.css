@@ -8,6 +8,7 @@
   --color-brand: #1677ff;
   --color-brand-600: #0f63d9;
   --color-sky: #38a5ff;
+  --color-link: #0b57c7;
   --color-ice: #f4f8ff;
   --color-ink: #0b1730;
   --color-ink-soft: #46546f;
@@ -70,10 +71,11 @@ body {
 }
 
 .btn-primary {
-  background-image: linear-gradient(135deg, #38a5ff 0%, #1677ff 55%, #0f63d9 100%);
+  background-image: linear-gradient(135deg, #136ff0 0%, #0f63d9 55%, #0b52c4 100%);
   box-shadow:
     0 10px 30px -10px rgb(22 119 255 / 0.7),
-    inset 0 1px 0 rgb(255 255 255 / 0.25);
+    inset 0 1px 0 rgb(255 255 255 / 0.28),
+    inset 0 0 0 1px rgb(56 165 255 / 0.35);
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease,
@@ -162,7 +164,34 @@ body {
   }
 }
 
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes menu-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 @media (prefers-reduced-motion: no-preference) {
+  .hero-rise {
+    animation: rise-in 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) var(--d, 0ms) both;
+  }
+  .menu-in {
+    animation: menu-in 0.22s ease-out both;
+  }
   .animate-float {
     animation: float-y 6s ease-in-out infinite;
   }
@@ -197,9 +226,13 @@ body {
   }
 }
 
-/* Visible, consistent keyboard focus */
+/* Visible, consistent keyboard focus (blue on light, sky on dark surfaces) */
 :focus-visible {
-  outline: 2px solid var(--color-sky);
+  outline: 2px solid var(--color-link);
   outline-offset: 3px;
   border-radius: 6px;
+}
+[data-surface="dark"] :focus-visible,
+[data-surface="dark"]:focus-visible {
+  outline-color: var(--color-sky);
 }

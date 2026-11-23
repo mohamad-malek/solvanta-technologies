@@ -14,6 +14,7 @@ export function Projects() {
   return (
     <section
       id="projects"
+      data-surface="dark"
       aria-labelledby="projects-title"
       className="relative isolate overflow-hidden bg-navy py-24 sm:py-28"
     >

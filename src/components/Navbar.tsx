@@ -52,10 +52,19 @@ export function Navbar() {
     };
   }, [open]);
 
+  // Close the mobile menu if the viewport grows to the desktop layout
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 1024px)");
+    const onChange = () => mq.matches && setOpen(false);
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
+  }, []);
+
   const solid = scrolled || open;
 
   return (
     <header
+      data-surface="dark"
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         solid
           ? "border-b border-white/10 bg-navy/85 shadow-[0_8px_30px_-12px_rgba(0,0,0,0.5)] backdrop-blur-xl"
@@ -120,7 +129,7 @@ export function Navbar() {
       <div
         id="mobile-menu"
         hidden={!open}
-        className="max-h-[calc(100dvh-4.5rem)] overflow-y-auto border-t border-white/10 bg-navy lg:hidden"
+        className="menu-in max-h-[calc(100dvh-4.5rem)] overflow-y-auto border-t border-white/10 bg-navy lg:hidden"
       >
         <ul className="mx-auto flex max-w-7xl flex-col gap-1 px-5 py-4 sm:px-8">
           {NAV_LINKS.map((link) => (

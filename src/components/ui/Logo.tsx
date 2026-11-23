@@ -31,8 +31,8 @@ export function Logo({ variant = "mark", className = "", priority = false }: Log
       <Image
         src="/solvanta-mark.png"
         alt=""
-        width={96}
-        height={104}
+        width={169}
+        height={208}
         priority={priority}
         className="h-10 w-auto drop-shadow-[0_4px_14px_rgba(22,119,255,0.45)]"
       />

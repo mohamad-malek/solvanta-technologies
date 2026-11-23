@@ -6,6 +6,7 @@ export function Process() {
   return (
     <section
       id="process"
+      data-surface="dark"
       aria-labelledby="process-title"
       className="relative isolate overflow-hidden bg-navy-900 py-24 sm:py-28"
     >

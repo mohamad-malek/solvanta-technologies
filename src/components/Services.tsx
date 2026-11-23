@@ -39,14 +39,6 @@ export function Services() {
                   {title}
                 </h3>
                 <p className="relative mt-3 flex-1 text-[0.95rem] leading-relaxed text-ink-soft">{text}</p>
-                <a
-                  href="#contact"
-                  className="relative mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-brand transition-all group-hover:gap-2.5"
-                >
-                  Discuss this service
-                  <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-                  <span className="sr-only"> — {title}</span>
-                </a>
                 <span
                   className="absolute inset-x-0 bottom-0 h-1 origin-left scale-x-0 bg-gradient-to-r from-sky to-brand transition-transform duration-500 group-hover:scale-x-100"
                   aria-hidden="true"
@@ -55,6 +47,17 @@ export function Services() {
             </Reveal>
           ))}
         </ul>
+
+        <Reveal delay={100} className="mt-12 text-center">
+          <p className="text-ink-soft">Not sure which service fits your project?</p>
+          <a
+            href="#contact"
+            className="mt-2 inline-flex items-center gap-1.5 font-semibold text-link transition-all hover:gap-2.5"
+          >
+            Tell us what you need
+            <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+          </a>
+        </Reveal>
       </div>
     </section>
   );

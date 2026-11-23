@@ -10,7 +10,7 @@ export function About() {
       <div className="relative mx-auto grid max-w-7xl gap-14 px-5 sm:px-8 lg:grid-cols-[0.95fr_1.05fr] lg:gap-20">
         <div>
           <Reveal>
-            <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-brand">
+            <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-link">
               <span className="h-px w-6 bg-brand/50" aria-hidden="true" />
               About Us
             </p>

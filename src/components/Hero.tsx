@@ -1,11 +1,11 @@
 import { ArrowRight, Layers } from "lucide-react";
-import { Reveal } from "./ui/Reveal";
 import { HeroVisual } from "./visuals/HeroVisual";
 
 export function Hero() {
   return (
     <section
       id="home"
+      data-surface="dark"
       aria-labelledby="hero-title"
       className="relative isolate overflow-hidden bg-navy pb-28 pt-32 sm:pt-36 lg:pb-36 lg:pt-40"
     >
@@ -19,14 +19,14 @@ export function Hero() {
 
       <div className="mx-auto grid max-w-7xl items-center gap-16 px-5 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10">
         <div>
-          <Reveal>
+          <div className="hero-rise" style={{ "--d": "0ms" } as React.CSSProperties}>
             <p className="inline-flex items-center gap-2 rounded-full border border-sky/30 bg-sky/10 px-4 py-1.5 text-xs font-semibold tracking-wide text-sky">
               <Layers className="h-3.5 w-3.5" aria-hidden="true" />
               Software Development &amp; Technology Solutions
             </p>
-          </Reveal>
+          </div>
 
-          <Reveal delay={80}>
+          <div className="hero-rise" style={{ "--d": "80ms" } as React.CSSProperties}>
             <h1
               id="hero-title"
               className="mt-6 font-display text-[2.6rem] font-extrabold leading-[1.05] tracking-tight text-balance text-white sm:text-6xl lg:text-[4.1rem]"
@@ -34,16 +34,16 @@ export function Hero() {
               We Build Digital Solutions That{" "}
               <span className="text-gradient">Move Businesses Forward.</span>
             </h1>
-          </Reveal>
+          </div>
 
-          <Reveal delay={160}>
+          <div className="hero-rise" style={{ "--d": "160ms" } as React.CSSProperties}>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-pretty text-slate-300">
               We design and develop modern web applications, business management systems, and
               scalable digital solutions that turn complex challenges into practical results.
             </p>
-          </Reveal>
+          </div>
 
-          <Reveal delay={240}>
+          <div className="hero-rise" style={{ "--d": "240ms" } as React.CSSProperties}>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <a
                 href="#services"
@@ -62,18 +62,18 @@ export function Hero() {
                 View Our Work
               </a>
             </div>
-          </Reveal>
+          </div>
 
-          <Reveal delay={320}>
+          <div className="hero-rise" style={{ "--d": "320ms" } as React.CSSProperties}>
             <p className="mt-10 border-l-2 border-brand pl-4 font-display text-lg font-semibold italic text-slate-200">
               Turning Challenges into Solutions.
             </p>
-          </Reveal>
+          </div>
         </div>
 
-        <Reveal delay={200} className="pb-12 lg:pb-0">
+        <div className="hero-rise pb-12 lg:pb-0" style={{ "--d": "200ms" } as React.CSSProperties}>
           <HeroVisual />
-        </Reveal>
+        </div>
       </div>
     </section>
   );

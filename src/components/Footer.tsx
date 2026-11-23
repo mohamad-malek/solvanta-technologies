@@ -1,10 +1,16 @@
 import { NAV_LINKS, COMPANY } from "@/lib/data";
 import { Logo } from "./ui/Logo";
 
-export function Footer() {
-  const year = new Date().getFullYear();
+async function getYear() {
+  "use cache";
+  // Computed once at build/prerender time; the site is fully static.
+  return new Date().getFullYear();
+}
+
+export async function Footer() {
+  const year = await getYear();
   return (
-    <footer className="border-t border-white/10 bg-navy-900 text-slate-300">
+    <footer data-surface="dark" className="border-t border-white/10 bg-navy-900 text-slate-300">
       <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8">
         <div className="grid gap-10 md:grid-cols-[1.4fr_1fr]">
           <div>
@@ -24,7 +30,7 @@ export function Footer() {
             <ul className="mt-5 grid grid-cols-2 gap-x-6 gap-y-3 sm:grid-cols-3 md:grid-cols-2">
               {NAV_LINKS.map((l) => (
                 <li key={l.href}>
-                  <a href={l.href} className="text-sm text-slate-300 transition hover:text-white">
+                  <a href={l.href} className="inline-block py-1.5 text-sm text-slate-300 transition hover:text-white">
                     {l.label}
                   </a>
                 </li>

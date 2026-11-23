@@ -38,8 +38,8 @@ function Avatar({ initials, index, lead }: { initials: string; index: number; le
           fontSize="30"
           fontWeight="800"
           fill="#fff"
-          fontFamily="var(--font-jakarta), ui-sans-serif, system-ui, sans-serif"
           letterSpacing="1"
+          style={{ fontFamily: "var(--font-jakarta), ui-sans-serif, system-ui, sans-serif" }}
         >
           {initials}
         </text>
@@ -66,20 +66,15 @@ export function Team() {
           {TEAM.map((m, i) => (
             <Reveal as="li" key={m.name} delay={i * 120}>
               <article
-                className={`group relative flex h-full flex-col rounded-3xl border bg-white p-8 text-center transition duration-300 hover:-translate-y-1.5 ${
+                className={`group relative flex h-full flex-col rounded-2xl border bg-white p-8 text-center transition duration-300 hover:-translate-y-1.5 ${
                   m.lead
                     ? "border-brand/30 shadow-[0_30px_60px_-30px_rgba(22,119,255,0.45)]"
                     : "border-slate-200 shadow-[0_1px_2px_rgba(11,23,48,0.04)] hover:border-brand/40 hover:shadow-[0_30px_60px_-30px_rgba(22,119,255,0.4)]"
                 }`}
               >
-                {m.lead && (
-                  <span className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-navy px-3.5 py-1 text-[0.68rem] font-semibold uppercase tracking-widest text-sky">
-                    Team Lead
-                  </span>
-                )}
                 <Avatar initials={m.initials} index={i} lead={m.lead} />
                 <h3 className="mt-8 font-display text-xl font-bold text-navy">{m.name}</h3>
-                <p className="mt-1 text-sm font-semibold text-brand">{m.role}</p>
+                <p className="mt-1 text-sm font-semibold text-link">{m.role}</p>
                 <p className="mt-4 text-[0.95rem] leading-relaxed text-ink-soft">{m.text}</p>
               </article>
             </Reveal>

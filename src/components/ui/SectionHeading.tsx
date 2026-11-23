@@ -22,7 +22,7 @@ export function SectionHeading({
     <Reveal className={`max-w-3xl ${align === "center" ? "mx-auto text-center" : ""}`}>
       <p
         className={`inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] ${
-          dark ? "text-sky" : "text-brand"
+          dark ? "text-sky" : "text-link"
         }`}
       >
         <span className={`h-px w-6 ${dark ? "bg-sky/60" : "bg-brand/50"}`} aria-hidden="true" />

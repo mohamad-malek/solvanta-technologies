@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Solvanta Technologies — Company Website
 
-## Getting Started
+A static, single-page marketing website for the fictional software company **Solvanta Technologies**
+(*Turning Challenges into Solutions.*), built for a Master 2 Information System Engineering project.
 
-First, run the development server:
+> Academic project demonstration. The portfolio items are concept projects, and `contact@solvanta.example`
+> is an illustrative placeholder, not a monitored address.
+
+## Stack
+
+Next.js (App Router) · TypeScript · Tailwind CSS v4 · lucide-react. No backend, database, or CMS.
+
+## Run locally
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev        # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Production check:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run lint
+npm run build
+npm run start      # http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project structure
 
-## Learn More
+```
+src/
+  app/            layout, page, global styles, favicon (icon.png, apple-icon.png)
+  components/     Navbar, Hero, About, Services, Projects, Technologies, Process, Team, Contact, Footer
+    ui/           Logo, Reveal (scroll animation), SectionHeading
+    visuals/      SVG/CSS illustrations (hero dashboard, 3 project mock dashboards)
+  lib/data.ts     All site content (services, projects, tech, process, team)
+public/
+  solvanta-logo.png   original logo (used on the About section)
+  solvanta-mark.png   transparent S monogram derived from the logo (used in nav/footer)
+scripts/make-brand-assets.mjs   regenerates the mark + favicons from solvanta-logo.png
+```
 
-To learn more about Next.js, take a look at the following resources:
+### Replacing the logo
+Drop a new `public/solvanta-logo.png`, adjust the crop box in `scripts/make-brand-assets.mjs` if needed,
+then run `node scripts/make-brand-assets.mjs` to regenerate the monogram and favicons.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deploy
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Push to GitHub and import the repository in Vercel. No environment variables are required
+(optionally set `NEXT_PUBLIC_SITE_URL` when you add a custom domain; see `.env.example`).
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+`scripts/make-brand-assets.mjs` is a one-off helper that uses `sharp` (installed with Next.js); it is not part of the build.
