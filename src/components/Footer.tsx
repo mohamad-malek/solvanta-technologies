@@ -40,20 +40,26 @@ export async function Footer() {
           </nav>
         </div>
 
-        <div className="mt-12 flex flex-col gap-3 border-t border-white/10 pt-6 text-sm text-slate-400 sm:flex-row sm:items-center sm:justify-between">
-          <p>
-            &copy; {year} {COMPANY.name}. All rights reserved.
+        <div className="mt-12 border-t border-white/10 pt-6">
+          <div className="flex flex-col gap-3 text-sm text-slate-400 sm:flex-row sm:items-center sm:justify-between">
+            <p>
+              &copy; {year} {COMPANY.name}. All rights reserved.
+            </p>
+            <a
+              href={COMPANY.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 transition hover:text-white"
+            >
+              <GitBranch className="h-4 w-4" aria-hidden="true" />
+              GitHub
+              <span className="sr-only"> (opens in a new tab)</span>
+            </a>
+          </div>
+          <p className="mx-auto mt-6 max-w-2xl text-balance text-center text-xs leading-relaxed text-slate-500">
+            Solvanta Technologies is a fictional company website created for an academic project. It is not
+            affiliated with any existing business of the same name.
           </p>
-          <a
-            href={COMPANY.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 transition hover:text-white"
-          >
-            <GitBranch className="h-4 w-4" aria-hidden="true" />
-            GitHub
-            <span className="sr-only"> (opens in a new tab)</span>
-          </a>
         </div>
       </div>
     </footer>
